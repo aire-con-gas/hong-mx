@@ -23,7 +23,29 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.less$/,
-      loaders: ['style-loader', 'css-loader', 'less-loader'],
+      loaders: [
+        {
+          loader: 'style-loader',
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            importLoaders: 2, // https://github.com/postcss/postcss-loader#css-modules
+          },
+        },
+        {
+          loader: 'postcss-loader',
+        },
+        {
+          loader: 'less-loader',
+          options: {
+            modifyVars: {
+              px: '1rem / 16',
+            },
+          },
+        },
+      ],
     }, {
       test: /\.js$/,
       loaders: ['babel-loader'],

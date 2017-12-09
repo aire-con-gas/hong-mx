@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 import { render } from 'react-dom';
 import Avatar from './components/Avatar';
-import Nav from './components/Nav';
+import Info from './components/Info';
 import Main from './components/Main';
+import Nav from './components/Nav';
 import Profile from './components/Profile';
-
 import styles from './index.less';
 
 if (module.hot) {
@@ -13,7 +13,16 @@ if (module.hot) {
 
 const user = {
   name: 'Dave Hong',
-  title: 'Something About Me',
+  title: 'Front-end and full-stack web developer',
+  blurb: 'I live in the Bay Area and like making the web work.',
+  education: [
+    'UC Berkeley (Masters in Information Management)',
+    'UCLA (BA Sociology)',
+  ],
+  work: [
+    'Adobe Systems',
+    'FinancialForce',
+  ],
 };
 
 const App = () => (
@@ -25,10 +34,11 @@ const App = () => (
           name={ user.name }
           title={ user.title }
         />
-        <h1>Dave Hong</h1>
-        <div>
-          About Me
-        </div>
+        <Info
+          blurb={ user.blurb }
+          education={ user.education }
+          work={ user.work }
+        />
       </Profile>
     </Main>
   </Fragment>

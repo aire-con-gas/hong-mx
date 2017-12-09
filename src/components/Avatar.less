@@ -1,0 +1,52 @@
+.avatarContent {
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.avatarImage {
+  background-image: url(https://aboutme.imgix.net/background/users/d/a/v/davehong_1397777304_43.jpg?q=40&dpr=2&auto=format&fit=crop&w=620&h=413.3333333333333&crop=faces);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-bottom: 66.66666666666667%;
+
+  &:after {
+    content: '';
+  }
+}
+
+.avatarName {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+
+  h1, h2 {
+    color: white;
+  }
+
+  h1 {
+    font-size: 20px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0;
+  }
+}
